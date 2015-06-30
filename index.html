@@ -1,0 +1,37 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>NPR Player App</h1>
+    <h3>Based on <a href="http://www.ng-newsletter.com/posts/beginner2expert-how_to_start.html">this ng-newsletter tutorial</a>:</h3>
+
+    <div ng-controller="PlayerController">
+        <h5>NPR Stories</h5>
+        <ul>
+            <li ng-repeat="program in programs">
+                <span npr-link play='play(program)' ng-model="program"></span>
+            </li>
+        </ul>
+        <button ng-click="stop(program)" ng-show="playing">Stop</button><br /><br />
+        Playing audio? <b>{{ playing }}</b>
+    </div>
+
+    <div ng-controller="VoteCounter">
+        <div class="vote">
+            <h4>Did you like this?</h4>
+            <button ng-click="add(1)">Yes</button>
+            <button ng-click="subtract(1)">No</button>
+            <h4>Votes: {{ counter }}</h4>
+        </div>
+    </div>
+
+    <div ng-controller="MyController">
+        <p>Current time: {{ clock }}</p>
+        <h5>Author retrieved from $rootScope: {{ name }}</h5>
+    </div>
+</body>
+</html>

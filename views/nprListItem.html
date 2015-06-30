@@ -1,0 +1,3 @@
+<div ng-click="play(ngModel)">
+    <span>{{ ngModel.title.$text }}</span> - <span>Duration: {{ (duration / 60) | number:0 }}:{{ duration % 60}}</span> - <span><a href="{{ ngModel.link[0].$text }}">NPR link</a></span>
+</div>
